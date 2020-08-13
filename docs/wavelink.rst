@@ -151,16 +151,16 @@ Event Payloads
     :members:
 
 
-WavelinkMixin
+WavelinkCogMixin
 -----------------------
 
 .. warning::
-    Listeners must be used with a `wavelink.WavelinkMixin.listener()` decorator to work.
+    Listeners must be used with a `wavelink.WavelinkCogMixin.listener()` decorator to work.
 
 .. warning::
     Listeners must be coroutines.
 
-.. autoclass:: wavelink.meta.WavelinkMixin
+.. autoclass:: wavelink.meta.WavelinkCogMixin
     :members:
 
 
