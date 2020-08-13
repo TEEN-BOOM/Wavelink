@@ -28,7 +28,7 @@ class WavelinkBotMixin:
     def __new__(cls, *args, **kwargs):
         self = super().__new__(cls)
         if not isinstance(self, BotType):
-            raise DeprecationWarning(f"WavelinkBotMixin must be used with a discord.py Bot or AutoShardedBot not {type(self)})
+            raise DeprecationWarning(f"WavelinkBotMixin must be used with a discord.py Bot or AutoShardedBot not {type(self)}")
         self.wavelink = Client(bot=self)
         return self
 
