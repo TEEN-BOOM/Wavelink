@@ -20,17 +20,16 @@ class WavelinkBotMixin:
     .. code::py
 
         # WavelinkBotMixin must be used along a discord.py bot.
-        class MyBot(commands.Bot, wavelink.WavelinkBotMixin):
+        class MyBot(wavelink.WavelinkBotMixin, commands.Bot):
 
             ...
 
     """
-    def __new__(cls, *args, **kwargs):
-        self = super().__new__(cls)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         if not isinstance(self, BotType):
             raise DeprecationWarning(f"WavelinkBotMixin must be used with a discord.py Bot or AutoShardedBot not {type(self)}")
         self.wavelink = Client(bot=self)
-        return self
 
 
 class WavelinkCogMixin:
